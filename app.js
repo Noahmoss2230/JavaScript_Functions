@@ -37,7 +37,7 @@ checkAge("Noah", 27);
 function checkQuadrant(x, y) {
     if (x > 0 && y > 0) {
         return "Quadrant 1";
-    } else if (x < 2 && y > 0) {
+    } else if (x < 0 && y > 0) {
         return "Quadrant 2";
     } else if (x < 0 && y < 0) {
         return "Quadrant 3";
@@ -71,7 +71,7 @@ function checkTriangle(a, b, c) {
         if (a == b && b == c) {
             return `Equilateral`;
         } else if (a == b || b == c || a == c) {
-            return `Isoceles`;
+            return `Isosceles`;
         } else {
             return `Scalene`;
         }
@@ -113,4 +113,4 @@ function dataUsageFeedback(planLimit, day, usage) {
         ).toFixed(2)} GB/day `);
 }
 
-dataUsageFeedback(50, 10, 25);
+dataUsageFeedback(100, 15, 56);
