@@ -95,14 +95,14 @@ function dataUsageFeedback(planLimit, day, usage) {
     let projectedUsage = currentAvg * periodLength;
     let statusMsg;
     let suggestedAvg;
-    if (remainingDays === 0) {
-        suggestedAvg = remainingData.toFixed(2) + "GB today"
+    if (remainingDays <= 0) {
+        suggestedAvg = `0 GB - you are out of data!`
     } else {
-        suggestedAvg = (remainingData / remainingDays).toFixed(2) + "GB/day";
+        suggestedAvg = `${remainingData.toFixed(2)} GB`
     }
     
 
-    console.log(`${day} days(s) used, ${periodLength - day} day(s) remaining`);
+    console.log(`${day} days(s) used, ${remainingDays} day(s) remaining`);
     console.log(`Average projected use: ${projectedAvg.toFixed(2)} GB/day`);
 
     let overUnderAmount = projectedUsage - planLimit;
@@ -126,4 +126,4 @@ function dataUsageFeedback(planLimit, day, usage) {
         ${suggestedAvg}`);
 }
 
-dataUsageFeedback(100, 29, 74);
+dataUsageFeedback(100, 15, 58);
